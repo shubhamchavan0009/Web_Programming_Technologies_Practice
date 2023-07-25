@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   
+</head>
+<body>
+    <a href="event.html">Event object</a>
+    <script>
+       let today=new Date()
+        // let today=new Date("2012","08","22",12,25)
+        // let today=new Date(865544343)
+        document.write(`Date- ${today}<br>`)
+        // document.write(`Date- ${today.getFullYear()}<br>`)
+        // document.write(`Date- ${today.getMonth()}<br>`)
+        // document.write(`Date- ${today.getDate()}<br>`)
+        // document.write(`Date- ${today.getDay()}<br>`)
+        // document.write(`Date- ${today.toDateString()}<br>`)
+        // document.write(`Date- ${today.toLocaleDateString()}<br>`)
+        // document.write(`Date- ${today.toLocaleTimeString()}<br>`)
+        today.setFullYear(2001)
+        document.write(`Date- ${today}<br>`)
+        today.setMonth(3)
+        document.write(`Date- ${today}<br>`)
+        document.write(`Date- ${Date.now()}<br>`)
+    </script>
+</body>
+</html>

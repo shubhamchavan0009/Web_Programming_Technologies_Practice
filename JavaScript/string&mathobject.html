@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <input type="button" value="random no" id="ran">
+    <div id="val"></div>
+    <script>
+        // let str="Hello"
+        // let str1=String("Happy to see you to all To pune kothrud maha")
+        // document.write(`String= ${str1}<br>`)
+        // document.write(`String= ${str1.charAt(2)}<br>`)
+        // document.write(`String= ${str1.charCodeAt(2)}<br>`)
+        // document.write(`String= ${str1.startsWith('b')}<br>`)
+        // let strarr=str1.split(" ")
+        // document.write(`${strarr}<br>`)
+        // let str2=str1.replace("to","for")
+        // document.write(`${str2}<br>`)
+        // let str3=str1.replace(/to/ig,"for")
+        // document.write(`${str3}<br>`)
+        // let str4=str1.replace(/to|maha/ig,"for")
+        // document.write(`${str4}<br>`)
+
+        /* Math Object */
+
+        // document.write(Math.random())
+        // document.write(Math.floor(Math.random() * 10)) // 0 to 9
+        // document.write(Math.floor(Math.random() * 10) + 1) // 1 to 10
+
+        let max=20
+        let min=4
+        document.write(Math.floor(Math.random()* (1 + max - min) +min))
+
+        document.getElementById("ran").onclick=function(){
+            // let a=Math.floor(Math.random()* 10)
+            // let b=Math.floor(Math.random()* 10)
+            // let c=Math.floor(Math.random()* 10)
+            // let d=Math.floor(Math.random()* 10)
+            // let value1=a+' '+b+' '+c+' '+d
+           // let value1=Math.floor(Math.random()* arr.length)
+            //let valueindex=arr[value1]
+            // document.getElementById("val").innerHTML=`${value1} ${valueindex}`
+        
+            let arr=['a','b','c','d','e','f','g','h','i']
+            let a=arr[Math.floor(Math.random()* arr.length)]
+            let b=arr[Math.floor(Math.random()* arr.length)]
+            let c=arr[Math.floor(Math.random()* arr.length)]
+            let d=arr[Math.floor(Math.random()* arr.length)]
+            let value1=a+' '+b+' '+c+' '+d
+            document.getElementById("val").innerHTML=`${value1}`
+        }
+
+
+    </script>
+</body>
+
+</html>

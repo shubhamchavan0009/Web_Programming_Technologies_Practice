@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <h1 class="abc">Lorem ipsum dolor sit amet.</h1>
+    <p id="p1" onclick="this.innerHTML='Welcome'">Soil stabilization is a process which improves the physical properties</p>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+    <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+    <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora, rerum?</h1>
+    <p class="abc">Plastic and materials made with plastic have become the integral part of our day today life in various stages</p>
+    <button type="button" onclick="changeh1()">Click me</button>
+
+    <script>
+        function changeh1() {
+            // let h1arr = document.getElementsByTagName('h1')
+            let h1arr = document.getElementsByClassName('abc')
+            for (let index = 0; index < h1arr.length; index++) {
+                h1arr[index].style.color="yellow"
+                
+            }
+            // console.log(h1arr)
+            // document.getElementById('p1').style.color = "blue"
+            // document.getElementById('p1').style.backgroundColor = "green"
+
+        }
+        document.getElementById('p1').onmouseenter = function () {
+            // document.getElementById('p1').style.color = "red"
+            // document.getElementById('p1').style.fontSize = "40px"
+            this.style.color = "red"
+            this.style.fontSize = "40px"
+        }
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+    <input type="button" value="Callback Example" id="btn1"><br>
+    <div id="div1"></div>
+    <script>
+        document.getElementById('btn1').onclick=()=>{
+           /* let total=(n1,n2)=>n1+n2
+            let display=(s)=>document.getElementById('div1').innerHTML=s
+            let result=total(2,5)
+            display(result)  */
+
+           /* let display=(s)=>document.getElementById('div1').innerHTML=s
+            let total=(n1,n2,mycallback)=>{
+                let result=n1+n2
+                mycallback(result) //  display(result)
+            }
+            total(4,5,display) // callback */
+
+    
+            let total=(n1,n2,display=(s)=>document.getElementById('div1').innerHTML=s)=>{
+                let result=n1+n2
+                display(result) 
+            }
+            total(4,5) 
+        }
+    </script> 
+</body>
+</html>

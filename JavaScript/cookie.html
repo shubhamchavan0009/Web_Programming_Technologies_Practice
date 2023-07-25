@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<body>
+    <!-- <input type="text" id="cname"><input type="button" value="Set cookie" id="setcookie">
+    <input type="button" value="Get cookie" id="getcookie">
+    <div id="cookieval"></div> -->
+    Apply color:<select id="color">
+        <option>Select color</option>
+        <option>red</option>
+        <option>green</option>
+        <option>blue</option>
+    </select>
+    <script>
+        // document.getElementById('setcookie').onclick=function(){
+        //     let cname=document.getElementById('cname').value
+        //     document.cookie="name="+cname+";expires=Thu 29 Jun 2023 12:00:00 UTC" 
+        // }
+        // document.getElementById('getcookie').onclick=function(){
+        //     if (document.cookie.length !=0) {
+        //         document.getElementById('cookieval').innerHTML=document.cookie
+        //     }
+        //    else{
+        //     document.getElementById('cookieval').innerHTML="cookie is not set"
+        //    }
+        // }
+
+        document.getElementById('color').onchange = function () {
+            let color = document.getElementById('color').value
+            document.body.style.backgroundColor = color
+            document.cookie = "bgcolor=" + color
+        }
+
+        window.onload = function () {
+            if (document.cookie.length != 0) {
+                //alert(document.cookie) // bgcolor=red
+                color = document.cookie.split("=")[1]
+                document.body.style.backgroundColor = color
+                document.getElementById('color').value = color
+            }
+        }
+    </script>
+</body>
+
+</html>

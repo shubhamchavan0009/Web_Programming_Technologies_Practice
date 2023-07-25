@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <script>
+        /* destructuring array */
+        let names = ["abc", "pqr", "xyz", "def"]
+        // document.write(names)
+
+        //let [a,b,c,d]=names // a=acb b=pqr c=xyz d=def
+        let [a, b, ...c] = names // c=[xyz,def]..... (rest parameter)
+        //document.write(`${a} ${b} ${c}`)
+
+        // let arr = [3, 4, 5]
+        //    let[x,y,z=1]=arr
+        // document.write(`${x} ${y} ${z}`)
+
+        let arr1 = [3, 4, 5]
+        let [x, y] = arr1
+        // let [x,,y] = arr1
+        //document.write(`${x} ${y}`)
+
+        let [n1, n2] = [10, 20]
+        //document.write(`${n1} ${n2}<br>`)
+        // let[n1,n2=1]=[10,20]
+        // document.write(`${n1} ${n2}<br>`)
+
+        let num1 = 10;
+        let num2 = 20;
+        [num1, num2] = [num2, num1]
+        document.write(`After Swapping num1=${num1} and num2=${num2}<br>`)
+
+        /* destructuring object */
+        let obj = { fname: "Ram", lname: "Shrma", age: 20 }
+        // document.write(`${obj.fname} ${obj.lname}<br>`)
+
+        // let {fname,lname,age}=obj
+        // document.write(`${fname} ${lname}<br>`)
+
+        // let {fname:fn,lname:ln,age:ag}=obj
+        // document.write(`${fn} ${ln}`)
+
+        let { age, ...name } = obj
+        // document.write(`${age} ${name}<br>`) // name={fname:"Ram",lname:"Shrma"}
+        // document.write(`${age} ${name.fname} ${name.lname}<br>`) 
+
+        let { empid, ename } = { empid: 101, ename: "Smith" }
+        document.write(`${empid} ${ename}<br>`)
+
+
+    </script>
+</body>
+
+</html>

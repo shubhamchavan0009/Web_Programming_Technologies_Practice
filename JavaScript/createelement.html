@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   
+</head>
+<body>
+
+    <label for="">Add Item to List</label><input type="text" id="item">
+    <input type="button" value="Add Item" onclick="additeminlist()">
+    <input type="button" value="Empty cart" onclick="removelist()">
+    <h3>List Item</h3>
+    <ul id="list">
+
+    </ul>
+    <!-- <input type="button" value="Add para" onclick="createpara()">
+    <input type="button" value="Add textbox" onclick="createtxt()">
+    <div id="add"></div>
+    <h1>Heading</h1> -->
+    <script>
+
+        function additeminlist(){
+            let item=document.getElementById('item').value
+            let li=document.createElement("li")
+            li.textContent=item
+            document.getElementById('list').appendChild(li)
+        }
+
+        function removelist(){
+            // document.getElementById('list').remove() 
+            // document.getElementById('list').removeChild()
+            document.getElementById('list').removeChild(document.getElementById('list').firstElementChild)
+            
+        }
+
+        function createpara(){
+            let para=document.createElement("p")
+            // let txt=document.createTextNode("This is paragraph")
+            // para.appendChild(txt)
+            // para.textContent="Hello"
+            para.innerHTML="Hello"
+            // document.body.appendChild(para)
+            document.getElementById("add").appendChild(para)
+        }
+
+        function createtxt(){
+            let txt=document.createElement("input") // input type element
+            txt.setAttribute("type","text")
+            txt.setAttribute("id","uname")
+            txt.setAttribute("placeholder","enter name")
+            document.getElementById("add").appendChild(txt)
+        }
+    </script>
+</body>
+</html>

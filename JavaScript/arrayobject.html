@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <label>Enete Size for Array</label><input type="text" id="size">
+    <input type="button" value="array size" onclick="arrdata()"><br><br>
+    <div id="arraydata"></div>
+    <a href="dateobject.html">Date object</a>
+
+    <script>
+        let arr = [1,2,3]
+        // document.write(`${arr.join(" ")}<br>`)
+        // arr.push(10, 20)
+        // document.write(`${arr}<br>`)
+        // arr.unshift(9, 3, 2)
+        // document.write(`${arr}<br>`)
+        // arr.pop()
+        // document.write(`${arr}<br>`)
+        // arr.shift()
+        // document.write(`${arr}<br>`)
+        // // arr.splice(2, 3, 101, 102, 110) //2 is index no, 3 is delete count from index 2,101 102 110 -> insert items from index
+        // // document.write(`${arr}<br>`)
+        // arr.splice(2,0,101) //2 is index no, 0 is delete count from index 2,101 102 110 -> insert items from index
+        // document.write(`${arr}<br>`)
+        // document.write(`${arr.indexOf(2)}<br>`)
+        // document.write(`${arr.lastIndexOf(2)}<br>`)
+        // document.write(`${arr.reverse()}<br>`)
+        // document.write(` Sorted assending arry=${arr.sort(function(a,b){return a-b})}<br>`)
+        // document.write(` Sorted desending arry=${arr.sort(function(a,b){return b-a})}<br>`)
+        // document.write(`${arr.slice(2,5)}<br>`)
+
+        // arr.forEach(function(items,index){
+        //     document.getElementById("arraydata").innerHTML +=items
+        // })
+
+        // document.getElementById("arraydata").innerHTML =arr.filter(function(items){
+        //     return items > 10
+        // })
+
+        // let arr1=arr.filter(function(items){return items > 10})
+        // document.getElementById("arraydata").innerHTML =`Arr1 = ${arr1}`
+
+        let arr2=arr.map(function(items){return items*2})
+        document.getElementById("arraydata").innerHTML =`Arr= ${arr}<br>Arr2 = ${arr2}`
+
+        // let arr=new Array('a',1,null,true,"abc")
+        // console.log(arr)
+        function arrdata() {
+            let size = document.getElementById('size').value
+            let arr = new Array(size)
+            for (let i = 0; i < size; i++) {
+                arr[i] = parseInt(prompt("Enter Value"))
+            }
+            document.getElementById('arraydata').innerHTML = arr.join(" ")
+        }
+    </script>
+</body>
+
+</html>

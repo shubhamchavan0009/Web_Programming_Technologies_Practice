@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   
+</head>
+<body>
+    <div id="div1" style="border: 2px solid blue;height: 200px;width: 200px;">
+        <p id="p1" style="border: 2px solid red">Hello Welcome</p>
+    </div>
+    <script>
+        document.getElementById('div1').addEventListener("click",function(){
+            alert("parent element clicked")
+        },false) // event bubbling
+        document.getElementById('p1').addEventListener("click",function(){
+            alert("child element clicked")
+        },false) // event bubbling
+
+        document.getElementById('div1').addEventListener("click",function(){
+            alert("parent element clicked")
+        },true) // event capture
+        document.getElementById('p1').addEventListener("click",function(){
+            alert("child element clicked")
+        },true) // event capture
+
+        document.getElementById('div1').addEventListener("click",function($event){
+            console.log($event)
+            alert("parent element clicked")
+        },true) 
+        document.getElementById('p1').addEventListener("click",function(){
+            alert("child element clicked")
+        },true) 
+
+
+
+
+    </script>
+</body>
+</html>

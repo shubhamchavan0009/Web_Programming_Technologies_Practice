@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <script>
+        /*  let count = 1
+          let pro = new Promise((resolve, reject) => {
+              console.log("Promise Created")
+              if (count == 1) {
+                  resolve(count)
+              }
+              else {
+                  reject("error")
+              }
+          })
+          pro.then((data)=>{console.log("Promise Resolved",data)})
+          .catch((err)=>{console.log("Promise Reject",err)})
+          .finally(()=>{console.log("Finally block")}
+       */
+
+        const p = new Promise((resolve, reject) => {
+            setTimeout(() => { resolve("cdac") }, 4000)
+        })
+        // p.then((d)=>{console.log(d)})
+        p.then(d => { return d+" pune" })
+            .then(d1 => { return d1+" BE" })
+            .then(d2 => { return d2+" MCA" })
+            .then(d3 => { console.log(d3) })
+            .catch(err => { console.log(err) })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+    <input type="button" value="counter" id="btn">
+    <div id="count"></div>
+    <script>
+        // (function(){document.write("Hello")})()
+        // let sum=(function(a,b){return a+b})(2,3)
+        // document.write(sum)
+
+        // let c=1; // global variable
+        // document.getElementById('btn').onclick=function(){
+        //    // let c=1; // local variable
+        //     document.getElementById('count').innerHTML=c++
+        // }
+
+        let s=(function counter(){
+            let c=1
+            return function increasecount(){
+                return c++
+            }
+        })()
+
+        console.log(s) // s=function increasecount(){return c++}
+        console.log(s()) //1
+
+        document.getElementById('btn').onclick=function(){
+            document.getElementById('count').innerHTML=s()
+        }
+    </script>
+</body>
+</html>

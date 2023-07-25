@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <input type="button" value="function" id="btn">
+    <div id="para"></div>
+    <script>
+        // let h=function(){return "Hello"}  // ES5 Script
+        // console.log(h())
+
+        // let c=()=>"Hello World" // arrow function
+        // console.log(c())
+
+        // let b=(a)=>"Hello"+a
+        // console.log(b("Shailesh"))
+        // let b=a=>"Hello"+a
+        // console.log(b("Shailesh"))
+
+        // let h=(a,b)=>a+b
+        // console.log(h(2,3))
+        // let h=(a,b)=>a+b
+        // console.log(`${h(2,3)}`)
+
+        // let fact=(num)=>{
+        //     let f=1
+        //     for (let i = 1; i <=num; i++) {
+        //        f=f*i
+        //     }
+        //     return f
+        // }
+        // document.write(`factorial=${fact(5)}`)
+
+
+        // function fun() {
+        //     document.getElementById('para').innerHTML += this
+        // }
+         fun=()=> {
+            document.getElementById('para').innerHTML += this
+        }
+        window.onload=fun
+        document.getElementById('btn').addEventListener("click",fun)
+
+        // document.getElementById('btn').addEventListener("click",()=>{
+        //     document.getElementById('para').innerHTML += this
+        // })
+
+    </script>
+</body>
+
+</html>

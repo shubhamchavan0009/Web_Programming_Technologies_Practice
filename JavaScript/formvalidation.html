@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <form name="valifrm">
+        <label>Username</label><input type="text" id="uname" onblur="checkname()" autofocus>
+        <span id="msg" style="color: red;"></span>
+        <br>
+        <label>Email</label><input type="text" id="email" onblur=" checkemail()">
+        <span id="msg1" style="color: red;"></span>
+        <br>
+        <label>Mobile Number</label><input type="text" id="mobile" onblur="checkmobno()">
+        <span id="msg7" style="color: red;"></span>
+        <br>
+        <label>DOB</label><input type="date" id="date1" onblur="checkdate()">
+        <span id="msg5" style="color: red;"></span>
+        <br>
+        <label>DOB</label>
+        <select>
+            <option >Select Day</option>
+            <script>
+                for (let i = 1; i <=31; i++) {
+                    document.write("<option>"+i+"</option>")
+                }
+            </script>
+        </select>
+        <select>
+            <option value="select">Select Month</option>
+            <script>
+                let montharr=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+                for (let i = 0; i < montharr.length; i++) {
+                   // document.write("<option value='"+i+"'>"+montharr[i]+"</option>")
+                    document.write(`<option value="$[i]">${montharr[i]}</option>`) // template string
+                }
+            </script>
+        </select><br>
+        <label>Gender</label><input type="radio" id="male" value="male" name="gen" onblur="checkgender()">Male
+        <input type="radio" id="female" value="female" name="gen" onblur="checkgender()">Female
+        <span id="msg2" style="color: red;"></span>
+        <br>
+        <label>Hobbies</label>
+        <input type="checkbox" name="hobby" value="Badminton" onblur="checkhobby()">Badminton
+        <input type="checkbox" name="hobby" value="Travelling" onblur="checkhobby()">Travelling
+        <input type="checkbox" name="hobby" value="Banking" onblur="checkhobby()">Banking
+        <input type="checkbox" name="hobby" value="Cricket" onblur="checkhobby()">Cricket
+        <span id="msg3" style="color: red;"></span>
+        <br>
+        <label>City</label>
+        <select style="margin-bottom: 5px;width: 170px;" id="city" onchange="checkcity()">
+            <option value="select">Select City</option>
+            <optgroup label="Maharashtra">
+                <option>pune</option>
+                <option>Mumbai</option>
+            </optgroup>
+            <optgroup label="Rajasthan">
+                <option>jaipur</option>
+                <option>Udaipur</option>
+            </optgroup>
+            <optgroup label="UP">
+                <option>Agra</option>
+            </optgroup>
+            <option value="other">other</option>
+        </select>
+        <input type="text" id="othercity" style="display: none;">
+        <span id="msg6" style="color: red;"></span>
+        <br>
+        <input type="button" value="1234" id="btn" style="background-color: red;color: white;">
+        <input type="text" id="cap" onblur="checkcaptcha()">
+        <span id="msg8"  style="color: red;"></span><br>
+        <input type="button" value="Login" id="submit"><br>
+    </form>
+    <script src="formvalidation.js"></script>
+</body>
+
+</html>

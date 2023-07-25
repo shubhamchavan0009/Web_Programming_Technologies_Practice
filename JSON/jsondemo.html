@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+    <script>
+        // let Person = {
+        //     fname: "Ram", lname: "Shrma", age: 30, isactive: true, spouse: null,
+        //     hobbies: ["dance", "music", "cricket"], address: { buildingno: "e-218", area: "kothrud", city: "pune" }
+        // }
+        // console.log(Person) // object format
+        // let str=JSON.stringify(Person)
+        // document.write(str) // JSON format
+
+        let str1='{"fname":"Ram","lname":"Shrma","age":30,"isactive":true,"spouse":null,"hobbies":["dance","music","cricket"],"address":{"buildingno":"e-218","area":"kothrud","city":"pune"}}'
+        let obj=JSON.parse(str1)
+        console.log(obj)
+        console.log(obj.fname)
+        console.log(obj.address)
+    
+    </script>
+    
+</body>
+
+</html>

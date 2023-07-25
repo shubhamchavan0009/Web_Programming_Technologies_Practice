@@ -1,0 +1,25 @@
+#d1{
+    border: 2px solid brown;
+    position: relative;
+    left: 200px;
+}
+#p1{
+    position: absolute;
+    left: 100px;
+    top: 100px;
+}
+img{
+    position: fixed;
+    /* position: relative; */
+    left: 900px;
+    top: 20px;
+}
+span{
+    border: 2px solid greenyellow;
+    position: sticky;
+    top: 20px;
+}
+h4{
+    background-color: chartreuse !important;
+    color: chocolate;
+}

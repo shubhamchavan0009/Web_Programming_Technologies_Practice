@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <script> // window onload event
+        "use strict"
+        // window.alert("hello")
+        // window.document.write("Hello from document object write function")
+        // console.log("Hello from console")
+        // var str //undefined
+        // document.write("String= "+str+" Type= "+typeof(str)+"<br>")
+        // var str="pgdac"
+        // document.write("String= "+str+" Type= "+typeof(str)+"<br>")
+        // str=10
+        // document.write("String= "+str+" Type= "+typeof(str)+"<br>")
+        // str=null
+        // document.write("String= "+str+" Type= "+typeof(str)+"<br>")
+
+        // var num = 10
+        // document.write(num)
+
+        function add(a,b) {
+            var c=parseInt(a)+parseInt(b)
+            // document.write("Addition= "+c)
+            return c
+        }
+
+        // add(3,5)
+        // document.write(add(2,3))
+
+        var num1,num2
+        num1=window.prompt("Enter a number",1)
+        num2=window.prompt("Enter a number")
+        var sum=add(num1,num2)
+        document.write("num1= "+num1+" num2= "+num2+" and addition= "+sum)
+
+    </script>
+</body>
+
+</html>

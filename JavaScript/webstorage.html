@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <input type="text" id="cname"><input type="button" value="Set storage" id="set">
+    <input type="button" value="Get storage" id="get">
+    <div id="val"></div>
+    <script>
+        document.getElementById('set').onclick = function () {
+            let cname = document.getElementById('cname').value
+            localStorage.setItem("name",cname)
+            localStorage.city="Pune"
+            sessionStorage.city="Pune"
+        }
+        document.getElementById('get').onclick = function () {
+            
+            document.getElementById('val').innerHTML = localStorage.getItem("name")+" "+localStorage.city
+
+            document.getElementById('val').innerHTML = localStorage.getItem("name")+" "+sessionStorage.city
+    
+        }
+    </script>
+</body>
+
+</html>

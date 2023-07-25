@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <div id="div1" style="border: 2px solid blue;height: 200px;width: 200px;">
+        <p>Hello Welcome</p>
+    </div>
+    <button type="button" id="showhide">Hide Div</button><br><br>
+    <img src="Image/town-6227925_1920.jpg" alt="" style="width: 100px; height: 100px;" id="img1">
+    <script>
+        document.getElementById('showhide').onclick=function(){
+            // if (document.getElementById('div1').style.visibility=='hidden') {
+            //     document.getElementById('div1').style.visibility='visible'
+            //     this.innerHTML="Hide Div"
+            // }
+            // else{
+            //     document.getElementById('div1').style.visibility='hidden'
+            //     this.innerHTML="Show Div"
+            // }
+
+            
+
+
+        }
+
+        let oheight=document.getElementById('img1').style.height
+            let owidth=document.getElementById('img1').style.width
+            document.getElementById('img1').addEventListener('mouseenter',function(){
+                this.style.width="300px"
+                this.style.height="200px"
+            })
+            document.getElementById('img1').addEventListener('mouseleave',function(){
+                this.style.width=owidth
+                this.style.height=oheight
+            })
+    </script>
+</body>
+
+</html>

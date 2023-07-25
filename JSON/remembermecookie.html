@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    Username: <input type="text" id="name"><br>
+    Password: <input type="password" id="pwd"><br>
+    <input type="checkbox" value="RememberMe" id="rem">Remember Me <br>
+    <input type="button" value="Login">
+    <script>
+        document.getElementById('rem').onchange = function () {
+            if (this.checked == true) {
+                var obj = {
+                    name: document.getElementById('name').value,
+                    pwd: document.getElementById('pwd').value
+                }
+                var jsonString = JSON.stringify(obj); '{"name":"Cdac","pwd":"12345"}'
+                document.cookie = jsonString
+            }
+        }
+        document.body.onload = function () {
+            if (document.cookie.length != 0) {
+                var obj = JSON.parse(document.cookie) // {"name":"Cdac","pwd":"12345"} convert into js object
+                document.getElementById('name').value = obj.name
+                document.getElementById('pwd').value = obj.pwd
+                document.getElementById('rem').checked = true
+            }
+        }
+    </script>
+</body>
+
+</html>

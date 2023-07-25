@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+
+<body>
+    <script>
+        /* default parameter */
+        // let sum=(a,b)=>a+b
+        // console.log(sum(2,3)) //2+3
+        // let sum=(a,b=1)=>a+b
+        // console.log(sum(2)) // 2+1
+        // let sum=(a=1,b=1)=>a+b
+        // console.log(sum()) // 1+1
+
+        /* rest parameter - (...)=> convart fun calling values into an array */
+        // function fun(...r){ // [2,3,7,3,1,6,9]
+        //     console.log(r)
+        //     console.log(r.sort())
+        // }
+        // function fun(a,...r){ // a=2 [3,7,3,1,6,9]
+        //     console.log("A=",a)
+        //     console.log(r.sort())
+        // }
+        // fun(2,3,7,3,1,6,9)
+
+        /* arguments object */
+        // function fun1(){
+        //     console.log(arguments.length)
+        //     console.log(arguments[1])
+        //     for (let i = 0; i < arguments.length; i++) {
+        //         console.log("i=",arguments[i])
+        //     }
+        // }
+        // fun1("abc",4,6,"fgbusj",8,9)
+
+        /* spread operator - (...) => opposite of rest => spilt array into individuals */
+        let arr = [3, 4, 6, 7]
+        let arr1 = [9, 8, ...arr] // [9,8,3,4,6,7]
+        // console.log(arr1)
+        
+        // function fun2(a,b,c,...r){
+        //     console.log(a,b,c)
+        //     console.log(r)
+        // }
+        // fun2(...arr1) // fun2(9,8,3,4,6,7)
+
+        /* for of loop */
+        // for (let a of arr) {
+        //     console.log(a)
+        // }
+            let str="Hello welcome to pune"
+            for (let s of str) {
+                document.write(`${s}<br>`)
+            }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

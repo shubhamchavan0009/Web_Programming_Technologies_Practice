@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+    <ol>
+        <li onclick="imagename('C1')">C1</li>
+        <li onclick="imagename('C2')">C2</li>
+        <li onclick="imagename('C3')">C3</li>
+        <li onclick="imagename('C4')">C4</li>
+    </ol>
+    <br>
+    <img src="Image/C1.jpg" alt="" width="200px" height="200px" id="image">
+    <script>
+        function imagename(val){
+           // alert(val)
+            document.getElementById('image').src=`Image/${val}.jpg`
+        }
+    </script>
+</body>
+</html>
