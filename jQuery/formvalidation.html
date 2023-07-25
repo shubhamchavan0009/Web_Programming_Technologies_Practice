@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.js"></script>
+    <!-- Jquery Validation plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <!-- Jquery Validation additional methods plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+    <style>
+        /*built in error class*/
+        .error { 
+            color: red;
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1>Signup Form</h1>
+        <div id="myalert"></div>
+        <form id="frm" method="post">
+            <div class="form-group col-6">
+                <label for="">Username</label>
+                <input type="text" class="form-control" name="uname">
+            </div>
+            <div class="form-group col-6">
+                <label for="">Password</label>
+                <input type="password" class="form-control" name="pwd" id="pwd">
+            </div>
+            <div class="form-group col-6">
+                <label for="">Confirm Password</label>
+                <input type="password" class="form-control" name="cpwd">
+            </div>
+            <div class="row">
+                <div class="form-group col-3">
+                    <label for="">Email</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
+                <div class="form-group col-3">
+                    <label for="">Mobile</label>
+                    <input type="text" class="form-control" name="mobile">
+                </div>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="gen" value="male">
+                <label class="form-check-label">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input type="radio" class="form-check-input" name="gen" value="female">
+                <label class="form-check-label">Female</label>
+                <span id="errorToShow"></span>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="ch" id="ch" value="checked">
+                <label class="form-check-label">I accept t&C</label>
+                <span id="cherror"></span>
+            </div>
+            <div class="mt-2">
+                <input type="submit" class="btn btn-success" id="submit" value="Login" disabled="true">
+                <input type="button" class="btn btn-info" id="print" value="Print">
+            </div>
+        </form>
+    </div>
+    <script>
+        $(document).ready(() => {
+            // additional methods
+            $.validator.addMethod("emailonly", function (value, element) {
+                return this.optional(element) || /^([a-zA-Z0-9_.\-\#\]+)\@([a-z]+)\.([a-z]{2,3})$/.test(value)
+            }, "Invalid Email id")
+
+            $("#frm").validate({
+                rules: { // form validation rule
+                    // uname: { required: true},
+                    uname:{required: true,lettersonly: true },  // additional methods
+                    pwd: { required: true, minlength: 5, maxlength: 10 },
+                    cpwd: { required: true, equalTo: "#pwd" },
+                    // email: { email: true},
+                    email: { emailonly: true },
+                    mobile: { digits: true, minlength: 10, maxlength: 10 },
+                    gen: { required: true },
+                    ch: { required: true }
+                },
+                messages: { //  error message
+                    uname: { required: "Username is required" },
+                    pwd: {
+                        required: "Password is required",
+                        minlength: "Password should more than 5 char",
+                        maxlength: "Password should less than 10 char"
+                    }
+                },
+                errorClass:"invalid-feedback is-invalid",
+                validClass:"is-valid",
+                errorPlacement: (error, element) => { // error message position
+                    if (element.attr("name") == "gen") {
+                        error.appendTo("#errorToShow")
+                    }
+                    else if (element.attr("name") == "ch") {
+                        error.appendTo("#cherror")
+                    }
+                    else {
+                        error.insertAfter(element)
+                    }
+                },
+                highlight:function(element){
+                    $(element).fadeOut(function (){
+                        $(element).fadeIn()
+                        $(element).addClass("is-invalid")
+                    })
+                },
+                submitHandler: function (event) { // form submit handler
+                    // alert("Successfully Submited")
+                    var values={}
+                    $.each($("#frm").serializeArray(),function(i,field){ // for each loop
+                        values[field.name]=field.value // Student['fname']="ram"
+                    })
+                    let str=JSON.stringify(values)
+                    $("#myalert").append(`<div class="alert alert-success alert-dismissible" id="alertbox">
+                    Form Submitted Successfully..!!
+                    Data=${str}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>`)
+                }
+            })
+
+            $("#ch").click(() => { // login button disabled req. checkbox
+                if ($("#ch").is(":checked")) {
+                    $("#submit").removeAttr("disabled")
+                }
+                else {
+                    $("#submit").attr("disabled", "true")
+                }
+            })
+        })
+
+        $("#print").click(()=>{print()})
+    </script>
+</body>
+
+</html>

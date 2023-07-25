@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <!-- <script src="js/jquery.js"></script> -->
+    <!-- CDN Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+    <div class="container mt-5">
+        <button type="button" class="btn btn-primary mb-5" id="hide">Hide Image</button>
+        <button type="button" class="btn btn-warning mb-5" id="fade">Fade Image</button>
+        <button type="button" class="btn btn-info mb-5" id="slide">Slide</button>
+        <button type="button" class="btn btn-danger mb-5" id="stop">Stop</button><br>
+        <img src="Image/C3.jpg" alt="" id="img1" class="w-25"><br><br>
+        <div id="div1" style="background-color: gray; height: 200px;"></div>
+
+        <!-- <h1>Animate</h1>
+        <button type="button" class="btn btn-warning mb-5" id="animate">Animate</button><br>
+        <div id="ani" style="background-color: gray; height: 200px; width: 200px;position: relative;">
+            <p>This is animation example</p>
+        </div> -->
+    </div>
+    <script>
+          $(document).ready(() => {
+            $("#hide").click(function(){
+                // $(this).text("Show Image")
+                // $("img[src='Image/C3.jpg']").hide()
+                // $('#img1').hide('slow')
+                // $('#img1').hide('fast')
+                // $('#img1').hide(6000)
+                // $('#img1').hide(6000,()=>{
+                //     $("#hide").text("Show Image")
+                // })
+
+                let btntext= $(this).text()
+                if (btntext=='Hide Image') {
+                    $('#img1').hide(6000,()=>{$("#hide").text("Show Image")})
+                }
+                else{
+                    $('#img1').show(8000,()=>{$("#hide").text("Hide Image")})
+                }
+
+                // $('#img1').toggle(2000)
+
+            })
+
+            $("#fade").click(()=>{
+                // $('#img1').fadeOut(4000,()=>{ 
+                //     // $('#img1').fadeIn(5000)
+                //     $('#img1').fadeTo(4000,0.5)
+                // })
+                // $('#img1').fadeToggle(3000)
+                $('#img1').fadeToggle(3000 ,()=>{
+                    let btntext= $('#hide').text()
+                if (btntext=='Hide Image') {
+                    $('#img1').hide(6000,()=>{$("#hide").text("Show Image")})
+                }
+                else{
+                    $('#img1').show(8000,()=>{$("#hide").text("Hide Image")})
+                }
+                })
+
+            })
+
+            $("#slide").click(()=>{
+                // $('#div1').slideUp(5000,()=>{
+                //     $('#div1').slideDown(6000)
+                // })
+
+                // $('#div1').slideToggle(7000)
+                $('#div1').delay(3000).slideToggle(5000)
+            })
+
+            $("#stop").click(()=>{
+                $('#div1').stop()
+                $('#img1').stop()
+            })
+
+            $("#animate").click(()=>{
+                // $('#ani').animate({left:"350px"},4000,()=>{
+                //     $('p').css("font-size","30px")
+                // })
+                $('#ani').animate({left:"350px",height:"200px",width:"+=200px"},4000,()=>{
+                    $('p').animate({"font-size":"30px"},2000)
+                    $('#ani').animate({height:"300px",opacity:"0.5"})
+                })
+            })
+          })
+    </script>
+</body>
+</html>
