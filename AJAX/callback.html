@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+</head>
+<body>
+    <script>
+        console.log("first")
+        function loginuser(email,pwd){
+            setTimeout(()=>{
+                return {useremail:email} // {useremail:abc@gmail.com}
+            },3000)
+        }
+        const user=loginuser("abc@gmail.com",123456)
+        console.log(user) // {useremail:abc@gmail.com}
+        console.log("last")
+    </script> 
+</body>
+</html>

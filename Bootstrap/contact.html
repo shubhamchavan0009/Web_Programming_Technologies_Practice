@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        .dropdown-menu .dropdown-submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            /* top: -7px; */
+        }
+
+        .dropdown-menu .dropdown-submenu-left {
+            right: 100%;
+            left: auto;
+        }
+
+        .dropdown-menu>li:hover>.dropdown-submenu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top">
+        <h4>
+            <a href="#" class="navbar-brand">
+                <!-- Website -->
+                <img src="Image/Dtafalonso-Android-Lollipop-Photos.512.png" alt="" class="img-fluid"
+                    style="height: 50px;">
+            </a>
+        </h4>
+        <button type="button" class="btn btn-primary navbar-toggler" data-bs-toggle="collapse" data-bs-target="#col1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="col1" class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a href="homepage.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link">About</a></li>
+                <li class="nav-item dropdown">
+                    <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Product</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="" class="dropdown-item">Mens</a></li>
+                        <li><a href="" class="dropdown-item">Womens</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropend">
+                            <a href="" class="dropdown-item" data-bs-toggle="dropdown">Kids &raquo;</a>
+                            <ul class="dropdown-menu dropdown-submenu">
+                                <li><a href="" class="dropdown-item">Boys</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a href="" class="dropdown-item">Girls</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link active">Contact us</a></li>
+            </ul>
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search here">
+                    <button type="button" class="btn btn-warning"><i class="bi bi-search"></i></button>
+                </div>
+            </form>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="" class="nav-link"><i class="bi bi-cart-check"></i></a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="registration.html" class="nav-link active">Signup</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 100px;">
+        <h2 class="text-info">Contact Us</h2>
+        <hr>
+        <div class="col-6">
+            <form>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" placeholder="Enter Email">
+                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">+91</span>
+                    <input type="number" class="form-control" placeholder="Enter Mob No.">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="bi bi-person-rolodex"></i></span>
+                    <textarea type="text" class="form-control" placeholder="Remark"></textarea>
+                </div>
+            </form>
+        </div>
+
+        <div class="input-group">
+            <div class="input-group-text">
+                <input type="checkbox" class="form-check-input">
+            </div>
+            <input type="text" class="form-control" placeholder="Enter Mail">
+            <input type="text" class="form-control" placeholder="Enter fname">
+            <input type="text" class="form-control" placeholder="Enter lname">
+            <button class="btn btn-primary">Search</button>
+        </div>
+        <br><br><br>
+        <form class="form-floating">
+            <input type="text" class="form-control is-invalid" placeholder="Enter fname">
+            <label for="">UserName</label>
+        </form>
+    </div>
+</body>
+
+</html>

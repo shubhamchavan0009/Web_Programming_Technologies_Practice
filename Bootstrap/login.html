@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        .dropdown-menu .dropdown-submenu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            /* top: -7px; */
+        }
+
+        .dropdown-menu .dropdown-submenu-left {
+            right: 100%;
+            left: auto;
+        }
+
+        .dropdown-menu>li:hover>.dropdown-submenu {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md bg-primary navbar-dark fixed-top">
+        <h4>
+            <a href="#" class="navbar-brand">
+                <!-- Website -->
+                <img src="Image/Dtafalonso-Android-Lollipop-Photos.512.png" alt="" class="img-fluid"
+                    style="height: 50px;">
+            </a>
+        </h4>
+        <button type="button" class="btn btn-primary navbar-toggler" data-bs-toggle="collapse" data-bs-target="#col1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="col1" class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a href="homepage.html" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="" class="nav-link">About</a></li>
+                <li class="nav-item dropdown">
+                    <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Product</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="" class="dropdown-item">Mens</a></li>
+                        <li><a href="" class="dropdown-item">Womens</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropend">
+                            <a href="" class="dropdown-item" data-bs-toggle="dropdown">Kids &raquo;</a>
+                            <ul class="dropdown-menu dropdown-submenu">
+                                <li><a href="" class="dropdown-item">Boys</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a href="" class="dropdown-item">Girls</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
+            </ul>
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search here">
+                    <button type="button" class="btn btn-warning"><i class="bi bi-search"></i></button>
+                </div>
+            </form>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="" class="nav-link"><i class="bi bi-cart-check"></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="registration.html" class="nav-link active">Signup</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container col-8" style="margin-top: 100px;">
+        <h2 class="text-info">Login</h2>
+        <hr>
+        <div class="col-6">
+            <form>
+                <div class="row mb-2">
+                    <label class="col-2 col-form-label">UserName</label>
+                    <div class="col-10">
+                        <input type="text" class="form-control" id="uname">
+                    </div>
+                </div>
+                <div class="row mb-2 ">
+                    <label class="col-2 col-form-label">Password</label>
+                    <div class="col-10">
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="pwd">
+                            <span class="input-group-text bi bi-eye-slash" id="togglebtn"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="pwds" class="offset-2 text-white"></div>
+                <br>
+                <!-- <div class="row mb-2">
+                    <label class="col-2 col-form-label">First Name</label>
+                    <div class="col-4">
+                        <input type="text" class="form-control" id="fname">
+
+                    </div>
+                    <label class="col-2 col-form-label">Last Name</label>
+                    <div class="col-4">
+                        <input type="text" class="form-control" id="lname">
+                    </div>
+                </div> -->
+                <div class="form-group offset-2">
+                    <input name="" id="" class="btn btn-primary" type="button" value="Login">
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <script>
+        document.getElementById('uname').onblur = () => {
+            let uname = document.getElementById('uname')
+            if (uname.value.length == 0) {
+                uname.classList.add("is-invalid")
+                // uname.setAttribute("class","form-control is-invalid")
+            }
+            else {
+                uname.classList.remove("is-invalid")
+                uname.classList.add("is-valid")
+                // uname.setAttribute("class","is-invalid")
+                // uname.setAttribute("class","form-control is-valid")
+            }
+        }
+
+        document.getElementById('togglebtn').onclick = () => {
+            let x = document.getElementById('pwd')
+            if (x.type === "password") {
+                x.type = "text"
+                document.getElementById('togglebtn').classList.add("bi-eye")
+                document.getElementById('togglebtn').classList.remove("bi-eye-slash")
+            }
+            else {
+                x.type = "password"
+                document.getElementById('togglebtn').classList.remove("bi-eye")
+                document.getElementById('togglebtn').classList.add("bi-eye-slash")
+            }
+        }
+
+        document.getElementById('pwd').onkeyup = () => {
+            let pwd = document.getElementById('pwd').value
+            let pwds = document.getElementById('pwds')
+            if (pwd.length >= 10) {
+                pwds.style.backgroundColor = 'green'
+                pwds.textContent = 'Strong'
+            }
+            else if (pwd.length >= 6 && pwd.length < 10) {
+                pwds.style.backgroundColor = 'blue'
+                pwds.textContent = 'Medium'
+            }
+            else {
+                pwds.style.backgroundColor = 'red'
+                pwds.textContent = 'Weak'
+            }
+        }
+    </script>
+</body>
+
+</html>
