@@ -1,0 +1,5 @@
+const first=require("./first.js")
+let sum=first.add(2,3)
+console.log(sum)
+console.log(first.a)
+console.log(first.fact(4))
